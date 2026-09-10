@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blox Fruits All-In-One Hub</title>
+    <style>
+        :root {
+            --bg: #090d16;
+            --card-bg: #111827;
+            --card-border: #1f2937;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --text: #f9fafb;
+            --text-muted: #9ca3af;
+            --green: #10b981;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .wrapper {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--green);
+            padding: 6px 16px;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--green);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--green);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #60a5fa;
+            margin-bottom: 0.5rem;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .script-box-container {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.25rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .script-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .code-display {
+            background: #030712;
+            border: 1px solid #1f2937;
+            padding: 0.85rem;
+            border-radius: 8px;
+            font-family: monospace;
+            color: #60a5fa;
+            word-break: break-all;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .btn-copy {
+            width: 100%;
+            background: var(--accent);
+            color: #ffffff;
+            border: none;
+            padding: 0.85rem;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 1.25rem;
+            border-radius: 10px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: #f3f4f6;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <header>
+        <div class="status-badge">
+            <span class="status-dot"></span> Undetected & Updated
+        </div>
+        <h1>Blox Fruits Hub</h1>
+        <p class="subtitle">All-in-One script with Auto-Farm, ESP, Teleports, and Combat mods.</p>
+    </header>
+
+    <div class="script-box-container">
+        <div class="script-title">Executor Loadstring</div>
+        <div class="code-display" id="scriptText">loadstring(game:HttpGet("https://raw.githubusercontent.com/YOUR-USERNAME/YOUR-REPO/main/script.lua"))()</div>
+        <button class="btn-copy" onclick="copyLoadstring()">Copy Script Loadstring</button>
+    </div>
+
+    <div class="features-grid">
+        <div class="feature-card">
+            <h3>⚡ Smart Auto-Farm</h3>
+            <p>Quest automation, mob magnet, and fast attack speeds.</p>
+        </div>
+        <div class="feature-card">
+            <h3>👁️ Universal ESP</h3>
+            <p>Highlight players, fruits, chest locations, and bosses.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🌀 Teleports</h3>
+            <p>Fast travel across all seas, islands, and specific NPCs.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🍎 Fruit Collector</h3>
+            <p>Detect spawned fruits instantly and store them automatically.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function copyLoadstring() {
+        const text = document.getElementById('scriptText').innerText;
+        navigator.clipboard.writeText(text).then(() => {
+            const btn = document.querySelector('.btn-copy');
+            btn.innerText = 'Copied to Clipboard!';
+            btn.style.background = '#10b981';
+            setTimeout(() => {
+                btn.innerText = 'Copy Script Loadstring';
+                btn.style.background = '#3b82f6';
+            }, 2000);
+        });
+    }
+</script>
+
+</body>
+</html>
